@@ -1,0 +1,73 @@
+<h1>Custom popover with CDK</h1>
+
+<h2>With component (recommended)</h2>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facere non illo aliquid omnis fugiat molestiae, maxime corrupti officiis alias aut nulla enim labore quidem accusamus modi atque debitis nostrum.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facere non illo aliquid omnis fugiat molestiae, maxime corrupti officiis alias aut nulla enim labore quidem accusamus modi atque debitis nostrum.
+</p>
+
+<p class="row">
+  <button (click)="showPopover($event.target)">
+    Show popover
+  </button>
+
+  <button (click)="showPopover($event.target)">
+    Show popover
+  </button>
+
+  <button (click)="showPopover($event.target)">
+    Show popover
+  </button>
+</p>
+
+<p>
+  <button (click)="showPopover(anchor)">
+    Show popover on other element
+  </button>
+</p>
+
+<p>This is an <strong #anchor>anchor</strong> on an element</p>
+
+<p>
+  <button (click)="showPopoverCustomStyling($event.target)">
+    With custom styling
+  </button>
+</p>
+
+<p>
+  <button (mouseenter)="showPopoverCustomStyling($event.target)">
+    Hover
+  </button>
+</p>
+
+<h2>With template</h2>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facere non illo aliquid omnis fugiat molestiae, maxime corrupti officiis alias aut nulla enim labore quidem accusamus modi atque debitis nostrum.
+</p>
+
+<p>
+  <button (click)="showPopover($event.target)">
+    Show popover using template!
+  </button>
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facere non illo aliquid omnis fugiat molestiae, maxime corrupti officiis alias aut nulla enim labore quidem accusamus modi atque debitis nostrum.
+</p>
+
+<ng-template #template let-data let-popover="popover">
+  <h2>Template</h2>
+
+  <button (click)="showPopoverWithTemplate(template, $event.target)">
+    Popoverception...
+  </button>
+
+  <p>Passed data: {{ data | json }}</p>
+
+  <button (click)="popover.close()">Close</button>
+</ng-template>
